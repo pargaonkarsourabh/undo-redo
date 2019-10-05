@@ -31,11 +31,16 @@ void emptyStack(Stack *stack) {
 	while(!isEmpty(stack)) pop(stack);
 }
 
+void createStack(Stack *stack) {
+	stack->top = -1;
+}
+
 int main() {
 	Stack undo, redo;
-	undo.top = redo.top = -1;
-	
 	char input;
+	
+	createStack(&undo);
+	createStack(&redo);
 	do {
 		system("cls");
 		printf("Enter . to exit program\nEnter - to undo and + to redo\n");
